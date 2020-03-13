@@ -40,13 +40,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+    It's a framework that works with Node.js. It can be used to build Api's & we can use it to control our server and serve back lots of things like html.
+
 - [ ] Describe Middleware?
+
+    Middleware is essentially functions or code that gets executed in an order before the main function they are serving. For example with what we've learned, they can catch a request and perform things like validation and then either stop the request there or if some sort of validation passes, then pass the request off to the next function that needs it and so on. 
 
 - [ ] Describe a Resource?
 
+    Data or something the client wants back from the API.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+    Statuses on the request. 200's, 201's. Or a message from the developer attached to let them know that the action was successful. *res.status(200).json(response)* or something like *res.status(200).json({message: "Request was successful!"})*
+
 - [ ] How can we partition our application into sub-applications?
+
+    Keeping file structure clean and organized. Routes that correspond with alike requests or what operation will be happening in that route.
 
 ## Minimum Viable Product
 
