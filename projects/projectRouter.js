@@ -15,7 +15,7 @@ projects.get()
     })
 })
 
-router.get("/:id", (req, res) => {
+router.get("/:id", validateIfProjectExists, (req, res) => {
     projects.get(req.params.id)
     .then(project => {
         res.status(200).json(project)
@@ -64,6 +64,17 @@ router.delete("/:id", (req, res) => {
         res.status(500).json({message: err})
     })
 })
+
+function validateIfProjectExists (req, res, next) {
+    projects.get(req.params.id)
+      .then(project => {
+        if (project) {
+          next();
+        } else {
+          res.status(404).json({message: "No such project exists"});
+        }
+      });
+  }
 
 
 module.exports = router; 
