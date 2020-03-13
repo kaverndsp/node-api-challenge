@@ -16,12 +16,12 @@ The Minimum Viable Product must be completed in three hours.
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your _Team Lead_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
-- [ ] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
-- [ ] Implement the project on this Branch, committing changes regularly.
-- [ ] Push commits: git push origin `firstName-lastName`.
+- [✔️] Create a forked copy of this project.
+- [✔️] Add your _Team Lead_ as collaborator on Github.
+- [✔️] Clone your forked version of the Repository.
+- [✔️] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
+- [✔️] Implement the project on this Branch, committing changes regularly.
+- [✔️] Push commits: git push origin `firstName-lastName`.
 
 Follow these steps for completing your project.
 
@@ -40,23 +40,33 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+    It's a framework that works with Node.js. It can be used to build Api's & we can use it to control our server and serve back lots of things like html.
+
 - [ ] Describe Middleware?
+
+    Middleware is essentially functions or code that gets executed in an order before the main function they are serving. For example with what we've learned, they can catch a request and perform things like validation and then either stop the request there or if some sort of validation passes, then pass the request off to the next function that needs it and so on. 
 
 - [ ] Describe a Resource?
 
+    Data or something the client wants back from the API.
+
 - [ ] What can the API return to help clients know if a request was successful?
+
+    Statuses on the request. 200's, 201's. Or a message from the developer attached to let them know that the action was successful. *res.status(200).json(response)* or something like *res.status(200).json({message: "Request was successful!"})*
 
 - [ ] How can we partition our application into sub-applications?
 
+    Keeping file structure clean and organized. Routes that correspond with alike requests or what operation will be happening in that route.
+
 ## Minimum Viable Product
 
-- [ ] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.
-- [ ] Configure an _npm script_ named _"start"_ that will execute your code using _node_.
+- [✔️] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.
+- [✔️] Configure an _npm script_ named _"start"_ that will execute your code using _node_.
 
 Design and build the necessary endpoints to:
 
-- [ ] Perform CRUD operations on _projects_ and _actions_. When adding an action, make sure the `project_id` provided belongs to an existing `project`. If you try to add an action with an `id` of 3 and there is no project with that `id` the database will return an error.
-- [ ] Retrieve the list of actions for a project.
+- [✔️] Perform CRUD operations on _projects_ and _actions_. When adding an action, make sure the `project_id` provided belongs to an existing `project`. If you try to add an action with an `id` of 3 and there is no project with that `id` the database will return an error.
+- [✔️] Retrieve the list of actions for a project.
 
 Please read the following sections before implementing the Minimum Viable Product, they describe how the database is structured and the files and methods available for interacting with the data.
 
