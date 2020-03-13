@@ -15,7 +15,7 @@ actions.get()
     })
 })
 
-router.get("/:id", (req, res) => {
+router.get("/:id", validateIfActionExists, (req, res) => {
     actions.get(req.params.id)
     .then(action => {
         res.status(200).json(action)
@@ -68,7 +68,17 @@ router.put('/:id', (req, res) => {
         }
       });
   }
-
+  
+  function validateIfActionExists (req, res, next) {
+    actions.get(req.params.id)
+      .then(action => {
+        if (action) {
+          next();
+        } else {
+          res.status(404).json({message: "No such action exists"});
+        }
+      });
+  }
 
 
 
