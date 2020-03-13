@@ -25,7 +25,7 @@ router.get("/:id", validateIfProjectExists, (req, res) => {
     })
 })
 
-router.get("/:id/actions", (req, res) => {
+router.get("/:id/actions", validateIfProjectExists, (req, res) => {
     projects.getProjectActions(req.params.id)
     .then(projaction => {
         res.status(200).json(projaction)
